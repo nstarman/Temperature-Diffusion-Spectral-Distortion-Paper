@@ -1,0 +1,15 @@
+# Don't track TeX temporaries
+*latexindent*
+
+lineno.sty
+listofitems.sty
+listofitems.tex
+
+showyourwork-logo.pdf
+showyourwork-metadata.tex
+showyourwork-stamp.pdf
+showyourwork.otf
+showyourwork.tex
+
+xstring.sty
+xstring.tex

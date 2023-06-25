@@ -1,0 +1,22 @@
+name: spectral_distortions
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10
+  - pip
+  - cython
+  - numpy=1.24
+  - matplotlib
+  - astropy=5.2
+  - asdf
+  - asdf-astropy
+  - tqdm
+  - "typing_extensions>=4.8"
+
+  - pip:
+    - showyourwork
+    - classy==2.9.4.0
+    - git+https://github.com/GalOrrery/interpolated-coordinates.git
+    - git+https://github.com/cosmology-api/cosmology-compat-class.git

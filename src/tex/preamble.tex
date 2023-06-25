@@ -1,0 +1,71 @@
+% Help with page spacing
+% \raggedbottom
+
+% Rename Sections
+\renewcommand{\sectionautorefname}{\S\!}%
+\renewcommand{\subsectionautorefname}{\S\!\!}%
+\renewcommand{\subsubsectionautorefname}{\S\!}%
+\renewcommand{\equationautorefname}{eq.}
+\renewcommand{\figureautorefname}{Fig.}
+\newcommand{\appref}[1]{\hyperref[#1]{Appendix~\autoref*{#1}}}
+
+% ------------------------------------------------------------
+% Math
+
+\newcommand{\norm}[1]{\lvert #1 \rvert}
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+
+\newcommand{\Exp}[1]{e^{#1}}
+
+% differentials
+\NewDocumentCommand \dif {o m} {
+	\IfNoValueTF{#1}
+		{ \mathrm{d}{#2} }
+		{ \mathrm{d}^{#1}{\!#2} }
+}
+
+\NewDocumentCommand \deriv {s O{x} d<> m} {
+	% #1: star, optional change dydx to d/dx (y)
+	% #2: with respect to, optional default to x
+	% #3: power of the derivative, optional
+	% #4: the thing being differentiated
+	\IfBooleanTF{#1}
+		{% 
+		 \IfNoValueTF{#3}
+		 { \frac{\mathrm{d}}{\dif{#2}}\left({#4}\right) }
+		 { \frac{\mathrm{d}^{#3}}{\dif{#2}^{#3}}\left({#4}\right) }
+		}
+		{%
+		 \IfNoValueTF{#3}
+		 { \frac{\mathrm{d}{#4}}{\dif{#2}} }
+		 { \frac{\dif[{#3}]{#4}}{\dif{#2}^{#3}} }
+		}
+}
+
+\DeclareMathOperator{\arcsinh}{asinh}
+
+% ------------------------------------------------------------
+% Shortcuts
+
+\newcommand{\Leq}{L_{\rm eq}}
+\newcommand{\spll}{s_{||}}
+\newcommand{\sprp}{s_{\perp}}
+\newcommand{\sreco}{s_{\rm recombination}}
+\newcommand{\nhat}{{\bf\hat{n}}}
+
+\newcommand{\Pgam}{P_{\gamma}}
+\newcommand{\PgamBar}{\overline{\Pgam}}
+\newcommand{\PgamBarCL}{\PgamBar^{CL}}
+
+\newcommand{\Ggam}{g_\gamma}
+\newcommand{\GgamBar}{\overline{\Ggam}}
+\newcommand{\GgamBarCL}{\GgamBar^{CL}}
+
+\newcommand{\aeq}{a_{\rm eq}}
+\newcommand{\OmO}{\Omega_{m,0}}
+
+\newcommand{\DeltaT}{{\Delta T}}
+\newcommand{\Yd}{\mathcal{Y}}
+
+\newcommand{\package}[1]{\textsc{#1}}
