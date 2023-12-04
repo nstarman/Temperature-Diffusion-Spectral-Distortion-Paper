@@ -61,7 +61,7 @@ ax0.set_xticklabels([], visible=False)
 ax1.plot(
     chis_EL,
     C_EL_corr / C_EE_corr,
-    label=r"$\frac{C^{\mathcal{Y}(\Delta T)^2}}{ C^{\mathcal{Y}\mathcal{Y}}}(\theta)$",  # noqa: E501
+    label=r"$\frac{C^{\mathcal{Y}(\Delta T)^2}}{ C^{\mathcal{Y}\mathcal{Y}}}(\theta)$",
     c="tab:red",
     lw=2,
 )
