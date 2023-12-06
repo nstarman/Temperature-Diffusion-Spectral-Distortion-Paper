@@ -146,4 +146,4 @@ def correlation_function(  # noqa: PLR0913
         spl = InterpolatedUnivariateSplinewithUnits(kmag, cfi[i, :], **kw)  # (K,)
         integral[i] = spl.integral(kmag.min(), kmag.max())  # (1,)
 
-    return cosmo.T_cmb0**2 * integral
+    return cast("NDAf", cosmo.T_cmb0**2 * integral)

@@ -144,9 +144,9 @@ class Pspll_Distribution(rv_continuous):  # type: ignore[misc]
         cls: type[Self_Pspll],
         spll: NDAf,
         Pspllsprp: RectBivariateSpline,
-        *args: Any,  # noqa: ANN401
+        *args: Any,
         b: float | None = None,
-        **kwargs: Any,  # noqa: ANN401
+        **kwargs: Any,
     ) -> Self_Pspll:
         r"""Construct :math:`P(s_{||})` from :math:`P(s_{||}, s_{\perp})`.
 
