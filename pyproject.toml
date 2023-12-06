@@ -9,13 +9,16 @@ line-length = 88
 line-length = 88
 select = ["ALL"]
 ignore = [
-    "ANN101", "ANN102",
+    "ANN101", "ANN102", "ANN401",
     "B008", "B011",
     "COM812",
     "D105", "D107", "D203", "D213", "D417",
     "E402",
+    "FA102",
+    "FIX002",
     "N80",
     "N812", "N815", "N816",  # mixedCase
+    "TD002", "TD003",
     "TID252",  # Relative imports from parent modules are banned
 ]
 

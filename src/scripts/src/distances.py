@@ -4,7 +4,7 @@ from __future__ import annotations
 
 __all__: list[str] = []
 
-from typing import TYPE_CHECKING, Any, cast
+from typing import TYPE_CHECKING, cast
 from typing import Annotated as Ann
 
 import numpy as np
@@ -17,7 +17,7 @@ if TYPE_CHECKING:
 
 
 def Leq(
-    cosmo: StandardCosmologyWrapper[NDAf, Any],
+    cosmo: StandardCosmologyWrapper,
     *,
     z_eq: Ann[NDAf | float, Doc("Redshift at matter-radiation equality.")],
 ) -> Ann[NDAf, Doc("Distance scale factor, [Mpc]")]:
