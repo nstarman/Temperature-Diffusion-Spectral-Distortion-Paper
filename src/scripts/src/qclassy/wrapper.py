@@ -84,12 +84,10 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
     # Comoving distance
 
     @overload
-    def comoving_distance(self, z: InputT, /) -> u.Quantity:
-        ...
+    def comoving_distance(self, z: InputT, /) -> u.Quantity: ...
 
     @overload
-    def comoving_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity:
-        ...
+    def comoving_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity: ...
 
     def comoving_distance(self, z1: InputT, z2: InputT | None = None, /) -> u.Quantity:
         r"""Comoving line-of-sight distance :math:`d_c(z)` in Mpc.
@@ -140,12 +138,10 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
         return term1 * (term2 - 1.0 / np.sqrt(np.abs(self.Omega_k0)) * np.arcsin(term3))
 
     @overload
-    def comoving_volume(self, z: InputT, /) -> u.Quantity:
-        ...
+    def comoving_volume(self, z: InputT, /) -> u.Quantity: ...
 
     @overload
-    def comoving_volume(self, z1: InputT, z2: InputT, /) -> u.Quantity:
-        ...
+    def comoving_volume(self, z1: InputT, z2: InputT, /) -> u.Quantity: ...
 
     def comoving_volume(self, z1: InputT, z2: InputT | None = None, /) -> u.Quantity:
         r"""Comoving volume in cubic Mpc.
@@ -187,12 +183,10 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
     # Angular diameter
 
     @overload
-    def angular_diameter_distance(self, z: InputT, /) -> u.Quantity:
-        ...
+    def angular_diameter_distance(self, z: InputT, /) -> u.Quantity: ...
 
     @overload
-    def angular_diameter_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity:
-        ...
+    def angular_diameter_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity: ...
 
     def angular_diameter_distance(
         self, z1: InputT, z2: InputT | None = None, /
@@ -230,12 +224,10 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
     # Luminosity distance
 
     @overload
-    def luminosity_distance(self, z: InputT, /) -> u.Quantity:
-        ...
+    def luminosity_distance(self, z: InputT, /) -> u.Quantity: ...
 
     @overload
-    def luminosity_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity:
-        ...
+    def luminosity_distance(self, z1: InputT, z2: InputT, /) -> u.Quantity: ...
 
     def luminosity_distance(
         self, z1: InputT, z2: InputT | None = None, /

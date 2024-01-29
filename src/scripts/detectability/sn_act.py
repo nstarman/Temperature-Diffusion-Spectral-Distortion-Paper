@@ -1,4 +1,5 @@
 """Simulate the P2LS data on a grid of spll, sprp."""
+
 # ruff: noqa: ERA001
 
 import sys

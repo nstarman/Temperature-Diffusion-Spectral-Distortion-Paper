@@ -24,9 +24,7 @@ def power_spectrum(
     ns: Ann[NDAf | float, Doc("Scalar spectral index")],
 ) -> Ann[NDAf, Doc("Power spectrum [Mpc3]")]:
     """Compute simple power spectrum (divided by :math:`A_s`)."""
-    return cast(
-        "NDAf", (np.power(kmag / pivot_scale, ns - 1) / (4 * np.pi * kmag**3))
-    )
+    return cast("NDAf", (np.power(kmag / pivot_scale, ns - 1) / (4 * np.pi * kmag**3)))
 
 
 def _ratio(cosmo: StandardCosmology[NDAf, Any], z: NDAf | float) -> NDAf | float:

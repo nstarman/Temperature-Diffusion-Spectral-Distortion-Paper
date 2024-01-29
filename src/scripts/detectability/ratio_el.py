@@ -1,6 +1,5 @@
 """Simulate the P2LS data on a grid of spll, sprp."""
 
-
 import numpy as np
 from showyourwork.paths import user as user_paths
 
