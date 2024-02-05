@@ -38,6 +38,7 @@ def _flatten_dict(
 
     >>> _flatten_dict({"a": 1, "_": {"c": 2, "d": 3}})
     {'a': 1, 'c': 2, 'd': 3}
+
     """
     out: dict[str, Any] = {}
     for key, val in d.items():
@@ -74,6 +75,7 @@ class CLASSConfigParser(configparser.ConfigParser):
         a_today = 1.
 
         ...
+
     """
 
     def optionxform(self, optionstr: str) -> str:
