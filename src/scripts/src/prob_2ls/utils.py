@@ -27,6 +27,7 @@ def z_of_rho(rho: NDAf, /, *, z_eq: float) -> NDAf:
     Returns
     -------
     float
+
     """
     return (1 + z_eq) / (2 * rho**2 - 1) - 1
 
@@ -56,6 +57,7 @@ def rho2_of_rho1(
     Returns
     -------
     float
+
     """
     return cast("NDAf", rho1 - np.sqrt((spll + rho1 - maxrho) ** 2 + sprp**2))
 

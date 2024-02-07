@@ -52,6 +52,7 @@ class Pspll_Distribution(rv_continuous):  # type: ignore[misc]
         Shape parameters.
     seed : int, optional
         Seed for the random number generator.
+
     """
 
     def __init__(  # noqa: PLR0913
@@ -169,6 +170,7 @@ class Pspll_Distribution(rv_continuous):  # type: ignore[misc]
         -------
         Pspll_Distribution
             Distribution of :math:`\mathcal{P}(s_{||})`.
+
         """
         # Cut the support to `b`
         spll = spll[spll <= b] if b is not None else spll
@@ -235,6 +237,7 @@ class Psprp_ConditionalSampler:
     spl_ppf : `scipy.interpolate.LinearNDInterpolator`
         The ppf of sprp given spll.
         This is used to sample for sprp.
+
     """
 
     spl_pdf: RectBivariateSpline
@@ -264,6 +267,7 @@ class Psprp_ConditionalSampler:
         -------
         array_like
             The pdf in sprp, given spll.
+
         """
         return self._pdf(spll, sprp, grid=grid)
 
@@ -287,6 +291,7 @@ class Psprp_ConditionalSampler:
         -------
         NDArray[floating[Any]]
             The cdf in sprp, given spll.
+
         """
         return self._cdf(spll, sprp, grid=grid)
 
@@ -307,6 +312,7 @@ class Psprp_ConditionalSampler:
         -------
         NDArray[floating[Any]]
             The ppf in sprp, given spll.
+
         """
         return self._ppf(spll, q)
 
@@ -333,6 +339,7 @@ class Psprp_ConditionalSampler:
         -------
         NDArray[floating[Any]]
             The random variates. Shape ``size``.
+
         """
         if size is None:
             size = len(spll)
@@ -366,6 +373,7 @@ class Psprp_ConditionalSampler:
         Returns
         -------
         ``Psprp_ConditionalSampler``
+
         """
         x = Pspll.x
 
@@ -423,6 +431,7 @@ class P2D_Distribution:
         The marginal distribution in :math:`\mathcal{P}(s_{||})`.
     conditional_sprp : ``Psprp_ConditionalSampler``
         The conditional distribution in :math:`\mathcal{P}(s_{\perp} | s_{||})`.
+
     """
 
     pdf: RectBivariateSpline
@@ -442,6 +451,7 @@ class P2D_Distribution:
         Returns
         -------
         NDArray[floating[Any]]
+
         """
         samples_pll = self.marginal_spll.rvs(size=size)
         samples_prp = self.conditional_sprp.rvs(samples_pll, size=size, rng=rng)
@@ -479,6 +489,7 @@ class P2D_Distribution:
         Returns
         -------
         ``P2D_Distribution``
+
         """
         pdf_spl = (
             pycopy.deepcopy(pdf)
@@ -511,6 +522,7 @@ class P3D_Distribution(P2D_Distribution):
         The marginal distribution in :math:`\mathcal{P}(s_{||})`.
     conditional_sprp : ``Psprp_ConditionalSampler``
         The conditional distribution in :math:`\mathcal{P}(s_{\perp} | s_{||})`.
+
     """
 
     def rvs(self, *, size: int = 1, rng: Generator | None = None) -> NDAf:
@@ -526,6 +538,7 @@ class P3D_Distribution(P2D_Distribution):
         Returns
         -------
         NDArray[floating[Any]]
+
         """
         sprppll = super().rvs(size=size)  # (N, 2)
         phis: NDAf = default_rng(rng).uniform(low=0, high=2 * np.pi, size=size)

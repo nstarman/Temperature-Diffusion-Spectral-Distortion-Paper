@@ -103,10 +103,10 @@ def lines_of_sight_correlation(  # noqa: PLR0913
 
     # Calculate integral (N, C) -> (1, C)
     crossterm = np.sum(xispl(r1a2a) * xispl(r1a2b), 0) / n_pnt
-    crossterm[outofbounds] = np.NaN  # NaN out any with an OoB
+    crossterm[outofbounds] = np.nan  # NaN out any with an OoB
 
     selfterm = (np.sum(xispl(r1a2a), 0) / n_pnt) ** 2
-    selfterm[outofbounds] = np.NaN
+    selfterm[outofbounds] = np.nan
 
     return cast("NDAf", (crossterm - selfterm) / cosmo.T_cmb0**4)
 

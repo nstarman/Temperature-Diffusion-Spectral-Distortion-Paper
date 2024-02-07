@@ -107,6 +107,7 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
         -------
         Array
             The comoving distance :math:`d_c` in Mpc.
+
         """
         z1, z2 = (0, z1) if z2 is None else (z1, z2)
         return (
@@ -215,6 +216,7 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
         .. [1] Weinberg, 1972, pp 420-424; Weedman, 1986, pp 421-424.
         .. [2] Weedman, D. (1986). Quasar astronomy, pp 65-67.
         .. [3] Peebles, P. (1993). Principles of Physical Cosmology, pp 325-327.
+
         """
         if z2 is not None:
             raise NotImplementedError
@@ -253,6 +255,7 @@ class StandardCosmologyWrapper(CLASSYStandardCosmologyWrapper):  # type: ignore[
         References
         ----------
         .. [1] Weinberg, 1972, pp 420-424; Weedman, 1986, pp 60-62.
+
         """
         if z2 is not None:
             raise NotImplementedError
