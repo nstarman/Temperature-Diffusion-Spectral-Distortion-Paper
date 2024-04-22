@@ -22,7 +22,6 @@ dag:
   # ignore_files:
   #  - src/tex/orcid-ID.png
 
-
 # Externally-hosted datasets, e.g. on Zenodo
 datasets:
   # 10.5281/zenodo.6468327:
@@ -116,7 +115,7 @@ optimize_caching: false
 # Overleaf sync settings
 overleaf:
   # Overleaf project ID (blank = disabled)
-  id:  63ae1c1ff9ce7b0a7e4e1412
+  id: 63ae1c1ff9ce7b0a7e4e1412
   # Perform sync on GitHub Actions?
   gh_actions_sync: true
   # List of files to push to Overleaf

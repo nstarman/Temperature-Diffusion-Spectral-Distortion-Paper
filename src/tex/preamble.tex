@@ -31,7 +31,7 @@
 	% #3: power of the derivative, optional
 	% #4: the thing being differentiated
 	\IfBooleanTF{#1}
-		{% 
+		{%
 		 \IfNoValueTF{#3}
 		 { \frac{\mathrm{d}}{\dif{#2}}\left({#4}\right) }
 		 { \frac{\mathrm{d}^{#3}}{\dif{#2}^{#3}}\left({#4}\right) }

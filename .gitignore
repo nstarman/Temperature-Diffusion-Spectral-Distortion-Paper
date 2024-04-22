@@ -14,6 +14,10 @@ src/tex/figures/*
 __pycache__
 *.synctex.gz
 .DS_Store
+venv/*
+oryx-build-commands.txt
+node_modules/*
+
 /src/tex/showyourwork-logo.pdf
 /src/static/notes_version/*
 /src/static
