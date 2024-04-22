@@ -16,8 +16,8 @@ dependencies:
   - "typing_extensions>=4.8"
 
   - pip:
-    - showyourwork
-    - classy>3.2
-    - flt
-    - git+https://github.com/GalOrrery/interpolated-coordinates.git
-    - git+https://github.com/nstarman/cosmology-compat-class.git@spectral_distortions_paper_branch
+      - showyourwork
+      - classy>3.2
+      - flt
+      - git+https://github.com/GalOrrery/interpolated-coordinates.git
+      - git+https://github.com/nstarman/cosmology-compat-class.git@spectral_distortions_paper_branch
